@@ -2,8 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<p id="status">NOT LIVE 🔴</p>
-<p id="score">DMA 0 - 0 YBA</p>
 
 <title>JT.vrfs Web</title>
 
@@ -32,12 +30,15 @@
   <button onclick="window.scrollBy(0,600)" class="btn">
     ⬇ Scroll Down
   </button>
+
+  <!-- CLOCK -->
+  <div class="clock-box">
+    <div id="clock-time"></div>
+    <div id="clock-date"></div>
+  </div>
 </div>
-<div class="clock-box">
-  <div id="clock-time"></div>
-  <div id="clock-date"></div>
-</div>
-<!-- DASHBOARD GRID -->
+
+<!-- DASHBOARD -->
 <div class="section">
   <h2>🔥 DMA Hub</h2>
 
@@ -51,6 +52,16 @@
   </div>
 </div>
 
+<!-- LIVE MATCH -->
+<div class="section">
+  <div class="card live-match">
+    <h2>🔴 Live Match</h2>
+    <p>DMA vs YBA</p>
+    <p id="matchScore">0 - 0</p>
+    <p id="matchTime">0'</p>
+  </div>
+</div>
+
 <!-- NEXT MATCH -->
 <div class="section">
   <div class="card">
@@ -59,7 +70,7 @@
   </div>
 </div>
 
-<!-- QUICK INFO -->
+<!-- TEAM OVERVIEW -->
 <div class="section">
   <h2>📊 Team Overview</h2>
 
@@ -71,22 +82,22 @@
   </div>
 </div>
 
-<!-- SCHEDULE PREVIEW -->
+<!-- SCHEDULE -->
 <div class="section">
-  <h2>📅 Upcoming Matches</h2>
+  <h2>📅 Schedule</h2>
 
   <div class="card">
-    <h3>DMA vs YBA</h3>
+    <p>DMA vs YBA</p>
     <p>Wednesday - 7:15 PM EST</p>
   </div>
 
   <div class="card">
-    <h3>DMA vs CFC</h3>
+    <p>DMA vs CFC</p>
     <p>Friday - 8:00 PM EST</p>
   </div>
 </div>
 
-<!-- RESULTS PREVIEW -->
+<!-- RESULTS -->
 <div class="section">
   <h2>🏆 Results</h2>
 
@@ -101,7 +112,7 @@
   </div>
 </div>
 
-<!-- LEAGUES PREVIEW -->
+<!-- LEAGUES -->
 <div class="section">
   <h2>🌍 Leagues</h2>
 
@@ -111,8 +122,61 @@
     <p>🔥 GVRS - <span style="color:red;">NOT STARTED</span></p>
 
     <br>
-
     <a href="leagues.html" class="btn">View Leagues</a>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div class="section">
+  <h2>📰 Latest Updates</h2>
+
+  <div class="card">
+    <p>⚽ New players added</p>
+    <p>📅 Match vs YBA this week</p>
+    <p>🔥 Season starting soon</p>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section">
+  <h2>🏆 Achievements</h2>
+
+  <div class="card">
+    <p>🏆 League Winners (TBD)</p>
+    <p>🥇 Top Attack</p>
+    <p>🧱 Best Defense</p>
+  </div>
+</div>
+
+<!-- GOALS -->
+<div class="section">
+  <h2>🎯 Season Goals</h2>
+
+  <div class="card">
+    <p>✔ Win VASL</p>
+    <p>✔ Reach EGL Finals</p>
+    <p>✔ Build strongest squad</p>
+  </div>
+</div>
+
+<!-- TEAM ROLES -->
+<div class="section">
+  <h2>👥 Team Roles</h2>
+
+  <div class="card">
+    <p>👑 Owner: JT.vrfs</p>
+    <p>🧠 Manager: TBD</p>
+    <p>⚽ Captain: TBD</p>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENTS -->
+<div class="section">
+  <h2>📣 Announcements</h2>
+
+  <div class="card">
+    <p>🚨 Tryouts open now</p>
+    <p>📢 Follow socials</p>
   </div>
 </div>
 
@@ -120,8 +184,6 @@
 <div class="section">
   <div class="card">
     <h2>🎯 Join DMA</h2>
-    <p>Think you’re good enough? Prove it.</p>
-
     <a href="https://discord.gg/PGNkHFcHBq" class="btn">
       Join Tryouts
     </a>
