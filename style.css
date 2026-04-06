@@ -413,3 +413,6 @@ body.show {
     grid-template-columns: 1fr;
   }
 }
+.card h2 {
+  text-shadow: 0 0 10px white;
+}
