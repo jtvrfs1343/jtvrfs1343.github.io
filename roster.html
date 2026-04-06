@@ -2,155 +2,187 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
 
+<title>DMA Roster</title>
+
 <style>
-/* Dropdown button */
+
+/* HEADER */
+.roster-header {
+  margin-top: 100px;
+}
+
+/* POSITION BUTTON */
 .position-btn {
-  background: rgba(0,0,0,0.6);
+  background: linear-gradient(to right, #3a86ff, #0a1f44);
   color: white;
   border: none;
   padding: 15px;
-  width: 80%;
-  font-size: 24px;
-  margin: 10px auto;
+  width: 90%;
+  font-size: 22px;
+  margin: 15px auto;
   border-radius: 15px;
   cursor: pointer;
+  text-shadow: 0 0 10px black;
   transition: 0.3s;
 }
 
 .position-btn:hover {
-  background: #111;
+  transform: scale(1.05);
 }
 
-/* Hidden player list */
+/* PLAYER CONTAINER */
 .players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.4s ease;
 }
 
-/* Player names */
-.player {
-  padding: 10px;
-  margin: 5px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 0.3s;
-}
-
-/* When active */
+/* SHOW PLAYERS */
 .players.show {
   max-height: 500px;
 }
 
-.players.show .player {
-  opacity: 1;
-  transform: translateY(0);
+/* PLAYER STYLE */
+.player {
+  background: rgba(0,0,0,0.6);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.player:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px white;
+}
+
+/* MOBILE FIX */
+@media(max-width: 768px){
+  .player {
+    font-size: 17px;
+    padding: 10px;
+  }
+
+  .position-btn {
+    font-size: 20px;
+  }
+}
+
 </style>
 
 </head>
 
 <body class="fade">
 
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="roster.html">Roster</a>
-  <a href="leaderboard.html">Leaderboard</a>
+<!-- HEADER -->
+<div class="roster-header">
+  <h1>⚽ DMA Squad</h1>
+  <p>Main Team + Backup Players</p>
 </div>
-
-<h1>DMA Roster</h1>
 
 <!-- GK -->
 <button class="position-btn" onclick="toggle(this)">Goalkeepers (GK)</button>
 <div class="players">
-  <div class="player">xd234jsjs</div>
-  <div class="player">silentbrody</div>
-  <div class="player">lazzy neyy</div>
-  <div class="player">Backup: mencho</div>
-  <div class="player">Backup: jonathan</div>
-  <div class="player">Backup: splashaldo</div>
-  <div class="player">Backup: breezy</div>
+  <div class="player" data-name="xd234jsjs">🧤 xd234jsjs</div>
+  <div class="player" data-name="silentbrody">🧤 silentbrody</div>
+  <div class="player" data-name="lazzy neyy">🧤 lazzy neyy</div>
+  <div class="player" data-name="mencho">Backup: mencho</div>
+  <div class="player" data-name="jonathan">Backup: jonathan</div>
+  <div class="player" data-name="splashaldo">Backup: splashaldo</div>
+  <div class="player" data-name="breezy">Backup: breezy</div>
 </div>
 
 <!-- CB -->
 <button class="position-btn" onclick="toggle(this)">Center Backs (CB)</button>
 <div class="players">
-  <div class="player">JT.vrfs</div>
-  <div class="player">sky</div>
-  <div class="player">snowzzz</div>
-  <div class="player">daniel</div>
-  <div class="player">hugo</div>
-  <div class="player">chicharito</div>
-  <div class="player">ado</div>
-  <div class="player">prix</div>
-  <div class="player">callum</div>
-  <div class="player">Backup: biggy</div>
-  <div class="player">Backup: chris</div>
-  <div class="player">Backup: tyler</div>
-  <div class="player">Backup: sky</div>
-  <div class="player">Backup: comet</div>
-  <div class="player">Backup: chico</div>
-  <div class="player">Backup: KAFZ</div>
+  <div class="player" data-name="JT.vrfs">🧱 JT.vrfs</div>
+  <div class="player" data-name="sky">sky</div>
+  <div class="player" data-name="snowzzz">snowzzz</div>
+  <div class="player" data-name="daniel">daniel</div>
+  <div class="player" data-name="hugo">hugo</div>
+  <div class="player" data-name="chicharito">chicharito</div>
+  <div class="player" data-name="ado">ado</div>
+  <div class="player" data-name="prix">prix</div>
+  <div class="player" data-name="callum">callum</div>
+  <div class="player" data-name="biggy">Backup: biggy</div>
+  <div class="player" data-name="chris">Backup: chris</div>
+  <div class="player" data-name="tyler">Backup: tyler</div>
+  <div class="player" data-name="comet">Backup: comet</div>
+  <div class="player" data-name="chico">Backup: chico</div>
+  <div class="player" data-name="KAFZ">Backup: KAFZ</div>
 </div>
 
 <!-- CM -->
 <button class="position-btn" onclick="toggle(this)">Midfield (CM)</button>
 <div class="players">
-  <div class="player">fork david</div>
-  <div class="player">lunar</div>
-  <div class="player">danny.</div>
-  <div class="player">sky</div>
-  <div class="player">goob</div>
-  <div class="player">Backup: cole palmer</div>
-  <div class="player">Backup: hasbulla</div>
+  <div class="player" data-name="fork david">fork david</div>
+  <div class="player" data-name="lunar">lunar</div>
+  <div class="player" data-name="danny.">danny.</div>
+  <div class="player" data-name="sky">sky</div>
+  <div class="player" data-name="goob">goob</div>
+  <div class="player" data-name="cole palmer">Backup: cole palmer</div>
+  <div class="player" data-name="hasbulla">Backup: hasbulla</div>
 </div>
 
 <!-- CAM -->
 <button class="position-btn" onclick="toggle(this)">CAM</button>
 <div class="players">
-  <div class="player">bro</div>
-  <div class="player">cole palmer</div>
-  <div class="player">vortex</div>
+  <div class="player" data-name="bro">bro</div>
+  <div class="player" data-name="cole palmer">cole palmer</div>
+  <div class="player" data-name="vortex">vortex</div>
 </div>
 
 <!-- RW -->
 <button class="position-btn" onclick="toggle(this)">Right Wing (RW)</button>
 <div class="players">
-  <div class="player">chico</div>
-  <div class="player">sky</div>
-  <div class="player">Backup: mikey</div>
-  <div class="player">Backup: lazy neyy</div>
-  <div class="player">Backup: AE.JAYSHOUEI</div>
+  <div class="player" data-name="chico">🔥 chico</div>
+  <div class="player" data-name="sky">sky</div>
+  <div class="player" data-name="mikey">Backup: mikey</div>
+  <div class="player" data-name="lazy neyy">Backup: lazy neyy</div>
+  <div class="player" data-name="AE.JAYSHOUEI">Backup: AE.JAYSHOUEI</div>
 </div>
 
 <!-- ST -->
 <button class="position-btn" onclick="toggle(this)">Striker (ST)</button>
 <div class="players">
-  <div class="player">chico</div>
-  <div class="player">mikey</div>
-  <div class="player">rodrygotg</div>
-  <div class="player">Backup: xd234jsjs</div>
+  <div class="player" data-name="chico">🔥 chico</div>
+  <div class="player" data-name="mikey">⭐ mikey</div>
+  <div class="player" data-name="rodrygotg">rodrygotg</div>
+  <div class="player" data-name="xd234jsjs">Backup: xd234jsjs</div>
 </div>
 
 <!-- LW -->
 <button class="position-btn" onclick="toggle(this)">Left Wing (LW)</button>
 <div class="players">
-  <div class="player">mikey</div>
-  <div class="player">vinas</div>
+  <div class="player" data-name="mikey">⭐ mikey</div>
+  <div class="player" data-name="vinas">vinas</div>
 </div>
 
 <script>
+// dropdown toggle
 function toggle(btn){
   let list = btn.nextElementSibling;
   list.classList.toggle("show");
 }
+
+// player click → go to profile
+document.querySelectorAll(".player").forEach(player => {
+  player.addEventListener("click", () => {
+    let name = player.getAttribute("data-name");
+    window.location = "player.html?name=" + encodeURIComponent(name);
+  });
+});
 </script>
 
 </body>
 </html>
-<h3 id="playerCount"></h3>
