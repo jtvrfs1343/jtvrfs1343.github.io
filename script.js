@@ -66,3 +66,6 @@ setInterval(() => {
   document.getElementById("countdown").innerText =
     `${h}h ${m}m ${s}s`;
 }, 1000);
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
