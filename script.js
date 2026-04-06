@@ -22,3 +22,10 @@ for(let i = 0; i < 30; i++){
 
   document.body.appendChild(p);
 }
+document.querySelectorAll("a, .btn, .player").forEach(el => {
+  el.addEventListener("click", () => {
+    let audio = new Audio("https://www.myinstants.com/media/sounds/mouse-click.mp3");
+    audio.volume = 0.2;
+    audio.play();
+  });
+});
