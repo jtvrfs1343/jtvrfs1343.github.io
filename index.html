@@ -9,11 +9,17 @@
 <script defer src="script.js"></script>
 </head>
 
-<body>
+<body class="fade">
 
-<!-- STATUS BAR -->
-<div class="status-bar">
-  🔴 DMA MATCH NOT ACTIVE
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="roster.html">Roster</a>
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="schedule.html">Schedule</a>
+  <a href="results.html">Results</a>
+  <a href="stats.html">Stats</a>
+  <a href="leagues.html">Leagues</a>
 </div>
 
 <!-- HERO -->
@@ -25,46 +31,18 @@
     ⬇ Scroll Down
   </button>
 </div>
+
+<!-- DASHBOARD GRID -->
 <div class="section">
-<div class="card">
-  <h2>🔥 Live Status</h2>
-  <p>DMA Season Active</p>
-</div>
   <h2>🔥 DMA Hub</h2>
 
   <div class="grid">
-
     <a href="roster.html" class="grid-card">⚽ Roster</a>
     <a href="schedule.html" class="grid-card">📅 Schedule</a>
     <a href="results.html" class="grid-card">🏆 Results</a>
     <a href="stats.html" class="grid-card">📊 Stats</a>
     <a href="videos.html" class="grid-card">🎥 Videos</a>
-    <a href="leagues.html">🌍</a>
-  </div>
-
-</div>
-<!-- QUICK ACTIONS -->
-<div class="section">
-  <h2>⚡ Quick Actions</h2>
-
-  <div class="card">
-    <a href="roster.html" class="btn">⚽ Roster</a>
-    <a href="schedule.html" class="btn">📅 Schedule</a>
-    <a href="results.html" class="btn">🏆 Results</a>
-    <a href="stats.html" class="btn">📊 Stats</a>
-    <a href="leagues.html">🌍</a>
-  </div>
-</div>
-
-<!-- TEAM OVERVIEW -->
-<div class="section">
-  <h2>📊 Team Overview</h2>
-
-  <div class="card">
-    <p>👥 Players: 40+</p>
-    <p>🏆 Wins: 26</p>
-    <p>❌ Losses: 6</p>
-    <p>🔥 Win Rate: 81%</p>
+    <a href="leagues.html" class="grid-card">🌍 Leagues</a>
   </div>
 </div>
 
@@ -76,9 +54,21 @@
   </div>
 </div>
 
-<!-- SCHEDULE -->
+<!-- QUICK INFO -->
 <div class="section">
-  <h2>📅 Schedule</h2>
+  <h2>📊 Team Overview</h2>
+
+  <div class="card">
+    <p>👥 Players: 40+</p>
+    <p>🏆 Wins: 5</p>
+    <p>❌ Losses: 2</p>
+    <p>🔥 Win Rate: 71%</p>
+  </div>
+</div>
+
+<!-- SCHEDULE PREVIEW -->
+<div class="section">
+  <h2>📅 Upcoming Matches</h2>
 
   <div class="card">
     <h3>DMA vs YBA</h3>
@@ -91,20 +81,33 @@
   </div>
 </div>
 
-<!-- RESULTS -->
+<!-- RESULTS PREVIEW -->
 <div class="section">
-  <h2>🏆 Match Results</h2>
+  <h2>🏆 Results</h2>
 
   <div class="card">
-    <h3>DMA vs YBA</h3>
-    <p>Score: --</p>
+    <p>DMA vs YBA</p>
     <p>Status: Upcoming</p>
   </div>
 
   <div class="card">
-    <h3>DMA vs CFC</h3>
-    <p>Score: --</p>
+    <p>DMA vs CFC</p>
     <p>Status: Upcoming</p>
+  </div>
+</div>
+
+<!-- LEAGUES PREVIEW -->
+<div class="section">
+  <h2>🌍 Leagues</h2>
+
+  <div class="card">
+    <p>🏆 VASL - <span style="color:lime;">ACTIVE</span></p>
+    <p>⚽ EGL - <span style="color:lime;">ACTIVE</span></p>
+    <p>🔥 GVRS - <span style="color:red;">NOT STARTED</span></p>
+
+    <br>
+
+    <a href="leagues.html" class="btn">View Leagues</a>
   </div>
 </div>
 
@@ -120,13 +123,13 @@
   </div>
 </div>
 
-<!-- BOTTOM NAV (MOBILE) -->
+<!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <a href="index.html">🏠</a>
   <a href="roster.html">⚽</a>
   <a href="leaderboard.html">🏆</a>
   <a href="schedule.html">📅</a>
-  <a href="stats.html">📊</a>
+  <a href="leagues.html">🌍</a>
 </div>
 
 </body>
