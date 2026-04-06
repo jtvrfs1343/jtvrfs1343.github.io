@@ -3,6 +3,55 @@
 <head>
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
+
+<style>
+/* Dropdown button */
+.position-btn {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 80%;
+  font-size: 24px;
+  margin: 10px auto;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.position-btn:hover {
+  background: #111;
+}
+
+/* Hidden player list */
+.players {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+/* Player names */
+.player {
+  padding: 10px;
+  margin: 5px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+
+/* When active */
+.players.show {
+  max-height: 500px;
+}
+
+.players.show .player {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
 </head>
 
 <body class="fade">
@@ -15,45 +64,91 @@
 
 <h1>DMA Roster</h1>
 
-<div class="card">
-<h2>GK</h2>
-<p>xd234jsjs, silentbrody, lazzy neyy</p>
-<p><b>Backup:</b> mencho, jonathan, splashaldo, breezy</p>
+<!-- GK -->
+<button class="position-btn" onclick="toggle(this)">Goalkeepers (GK)</button>
+<div class="players">
+  <div class="player">xd234jsjs</div>
+  <div class="player">silentbrody</div>
+  <div class="player">lazzy neyy</div>
+  <div class="player">Backup: mencho</div>
+  <div class="player">Backup: jonathan</div>
+  <div class="player">Backup: splashaldo</div>
+  <div class="player">Backup: breezy</div>
 </div>
 
-<div class="card">
-<h2>CB</h2>
-<p>JT.vrfs, sky, snowzzz, daniel, hugo, chicharito, ado, prix, callum</p>
-<p><b>Backup:</b> biggy, chris, tyler, sky, comet, chico, KAFZ</p>
+<!-- CB -->
+<button class="position-btn" onclick="toggle(this)">Center Backs (CB)</button>
+<div class="players">
+  <div class="player">JT.vrfs</div>
+  <div class="player">sky</div>
+  <div class="player">snowzzz</div>
+  <div class="player">daniel</div>
+  <div class="player">hugo</div>
+  <div class="player">chicharito</div>
+  <div class="player">ado</div>
+  <div class="player">prix</div>
+  <div class="player">callum</div>
+  <div class="player">Backup: biggy</div>
+  <div class="player">Backup: chris</div>
+  <div class="player">Backup: tyler</div>
+  <div class="player">Backup: sky</div>
+  <div class="player">Backup: comet</div>
+  <div class="player">Backup: chico</div>
+  <div class="player">Backup: KAFZ</div>
 </div>
 
-<div class="card">
-<h2>CM</h2>
-<p>fork david, lunar, danny., sky, goob</p>
-<p><b>Backup:</b> cole palmer, hasbulla</p>
+<!-- CM -->
+<button class="position-btn" onclick="toggle(this)">Midfield (CM)</button>
+<div class="players">
+  <div class="player">fork david</div>
+  <div class="player">lunar</div>
+  <div class="player">danny.</div>
+  <div class="player">sky</div>
+  <div class="player">goob</div>
+  <div class="player">Backup: cole palmer</div>
+  <div class="player">Backup: hasbulla</div>
 </div>
 
-<div class="card">
-<h2>CAM</h2>
-<p>bro, cole palmer, vortex</p>
+<!-- CAM -->
+<button class="position-btn" onclick="toggle(this)">CAM</button>
+<div class="players">
+  <div class="player">bro</div>
+  <div class="player">cole palmer</div>
+  <div class="player">vortex</div>
 </div>
 
-<div class="card">
-<h2>RW</h2>
-<p>chico, sky</p>
-<p><b>Backup:</b> mikey, lazy neyy, AE.JAYSHOUEI</p>
+<!-- RW -->
+<button class="position-btn" onclick="toggle(this)">Right Wing (RW)</button>
+<div class="players">
+  <div class="player">chico</div>
+  <div class="player">sky</div>
+  <div class="player">Backup: mikey</div>
+  <div class="player">Backup: lazy neyy</div>
+  <div class="player">Backup: AE.JAYSHOUEI</div>
 </div>
 
-<div class="card">
-<h2>ST</h2>
-<p>chico, mikey, rodrygotg</p>
-<p><b>Backup:</b> xd234jsjs</p>
+<!-- ST -->
+<button class="position-btn" onclick="toggle(this)">Striker (ST)</button>
+<div class="players">
+  <div class="player">chico</div>
+  <div class="player">mikey</div>
+  <div class="player">rodrygotg</div>
+  <div class="player">Backup: xd234jsjs</div>
 </div>
 
-<div class="card">
-<h2>LW</h2>
-<p>mikey, vinas</p>
+<!-- LW -->
+<button class="position-btn" onclick="toggle(this)">Left Wing (LW)</button>
+<div class="players">
+  <div class="player">mikey</div>
+  <div class="player">vinas</div>
 </div>
+
+<script>
+function toggle(btn){
+  let list = btn.nextElementSibling;
+  list.classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
