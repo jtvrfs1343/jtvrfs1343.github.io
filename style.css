@@ -441,3 +441,22 @@ body.show {
   font-size: 14px;
   opacity: 0.8;
 }
+.socials {
+  margin-top: 15px;
+}
+
+.icon {
+  width: 40px;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px white);
+}
+@media(max-width: 768px){
+  .icon {
+    width: 35px;
+  }
+}
