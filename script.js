@@ -12,3 +12,13 @@ for(let i = 0; i < 12; i++){
 
   document.body.appendChild(ball);
 }
+// Particles
+for(let i = 0; i < 30; i++){
+  let p = document.createElement("div");
+  p.className = "particle";
+
+  p.style.left = Math.random() * 100 + "vw";
+  p.style.animationDuration = (5 + Math.random() * 10) + "s";
+
+  document.body.appendChild(p);
+}
