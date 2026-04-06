@@ -421,3 +421,23 @@ body.show {
   margin-top: 15px;
   text-shadow: 0 0 10px white;
 }
+.clock-box {
+  margin-top: 15px;
+  padding: 12px 20px;
+  display: inline-block;
+  background: rgba(0,0,0,0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+#clock-time {
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 0 0 10px white;
+}
+
+#clock-date {
+  font-size: 14px;
+  opacity: 0.8;
+}
