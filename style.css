@@ -64,3 +64,23 @@ h1 {
   margin-top: 120px;
   font-size: 60px;
 }
+/* Soccer balls */
+.soccer-ball {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.15;
+  pointer-events: none;
+  animation: floatBall linear infinite;
+}
+
+@keyframes floatBall {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+  }
+}
