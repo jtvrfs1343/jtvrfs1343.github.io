@@ -1,8 +1,48 @@
+// ✅ PAGE LOAD FADE
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("show");
+
+  // PLAYER COUNT (only works if element exists)
+  let countEl = document.getElementById("playerCount");
+  if(countEl){
+    let count = document.querySelectorAll(".player").length;
+    countEl.innerText = "Total Players: " + count;
+  }
+
+  // ACTIVE TAB (bottom nav highlight)
+  let links = document.querySelectorAll(".bottom-nav a");
+  links.forEach(link => {
+    if(link.href === window.location.href){
+      link.style.color = "#ffdd00";
+    }
+  });
+
+  // COUNTDOWN TIMER (only if exists)
+  let countdownEl = document.getElementById("countdown");
+  if(countdownEl){
+    const matchDate = new Date("2026-04-09T19:15:00");
+
+    setInterval(() => {
+      let now = new Date();
+      let diff = matchDate - now;
+
+      if(diff <= 0){
+        countdownEl.innerText = "LIVE 🔴";
+        return;
+      }
+
+      let h = Math.floor(diff / (1000*60*60));
+      let m = Math.floor((diff % (1000*60*60)) / (1000*60));
+      let s = Math.floor((diff % (1000*60)) / 1000);
+
+      countdownEl.innerText = `${h}h ${m}m ${s}s`;
+    }, 1000);
+  }
 });
-// Soccer balls generator
-for(let i = 0; i < 12; i++){
+
+
+// ⚽ ANIMATED SOCCER BALLS
+for(let i = 0; i < 10; i++){
   let ball = document.createElement("div");
   ball.className = "soccer-ball";
 
@@ -12,8 +52,10 @@ for(let i = 0; i < 12; i++){
 
   document.body.appendChild(ball);
 }
-// Particles
-for(let i = 0; i < 30; i++){
+
+
+// ✨ PARTICLES
+for(let i = 0; i < 25; i++){
   let p = document.createElement("div");
   p.className = "particle";
 
@@ -22,50 +64,13 @@ for(let i = 0; i < 30; i++){
 
   document.body.appendChild(p);
 }
-document.querySelectorAll("a, .btn, .player").forEach(el => {
-  el.addEventListener("click", () => {
+
+
+// 🔊 CLICK SOUND EFFECT (optional but cool)
+document.addEventListener("click", (e) => {
+  if(e.target.matches("a, .btn, .player")){
     let audio = new Audio("https://www.myinstants.com/media/sounds/mouse-click.mp3");
     audio.volume = 0.2;
     audio.play();
-  });
-});
-setInterval(() => {
-  let now = new Date();
-  document.getElementById("clock").innerText =
-    now.toLocaleTimeString();
-}, 1000);
-const quotes = [
-  "Play fast. Think faster.",
-  "DMA never loses ⚽",
-  "Train hard. Win easy.",
-  "Legends are built here."
-];
-
-document.getElementById("quote").innerText =
-  quotes[Math.floor(Math.random() * quotes.length)];
-let count = document.querySelectorAll(".player").length;
-let el = document.getElementById("playerCount");
-if(el){
-  el.innerText = "Total Players: " + count;
-}
-const matchDate = new Date("2026-04-09T19:15:00"); // adjust if needed
-
-setInterval(() => {
-  let now = new Date();
-  let diff = matchDate - now;
-
-  if(diff <= 0){
-    document.getElementById("countdown").innerText = "LIVE 🔴";
-    return;
   }
-
-  let h = Math.floor(diff / (1000*60*60));
-  let m = Math.floor((diff % (1000*60*60)) / (1000*60));
-  let s = Math.floor((diff % (1000*60)) / 1000);
-
-  document.getElementById("countdown").innerText =
-    `${h}h ${m}m ${s}s`;
-}, 1000);
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("show");
-}
+});
