@@ -212,3 +212,6 @@ body {
 @keyframes blink {
   50% { opacity: 0.5; }
 }
+.card:hover {
+  transform: scale(1.05) rotateX(5deg);
+}
