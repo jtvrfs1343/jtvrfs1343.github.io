@@ -1,1 +1,70 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: linear-gradient(to bottom, #0a1f44, #3a86ff);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
 
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ffdd00;
+}
+
+/* PAGE TRANSITION */
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.fade.show {
+  opacity: 1;
+}
+
+/* CARDS */
+.card {
+  background: rgba(0,0,0,0.4);
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 600px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* BUTTON */
+.btn {
+  background: white;
+  color: #0a1f44;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* HEADER */
+h1 {
+  margin-top: 120px;
+  font-size: 60px;
+  text-shadow: 2px 2px 10px black;
+}
