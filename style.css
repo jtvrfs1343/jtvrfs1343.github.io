@@ -215,3 +215,45 @@ body {
 .card:hover {
   transform: scale(1.05) rotateX(5deg);
 }
+/* MENU ICON */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+/* MOBILE STYLE */
+@media(max-width: 768px){
+
+  .menu-icon {
+    display: block;
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
