@@ -1,148 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>JT.vrfs Web</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      color: white;
-      scroll-behavior: smooth;
+<meta charset="UTF-8">
+<title>JT.vrfs Web</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-      /* Background gradient */
-      background: linear-gradient(to bottom, #0a1f44, #3a86ff);
+<style>
+  /* Basic body and gradient */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    scroll-behavior: smooth;
+    background: linear-gradient(to bottom, #0a1f44, #3a86ff);
+    overflow-x: hidden;
+    position: relative;
+  }
 
-      /* Soccer ball pattern overlay */
-      background-image: radial-gradient(circle at 30px 30px, rgba(255,255,255,0.06) 3px, transparent 3px);
-      background-size: 70px 70px;
-      position: relative;
-      overflow-x: hidden;
-    }
+  /* Soccer ball animated background */
+  .soccer-ball {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.15;
+    animation: float 15s linear infinite;
+  }
 
-    /* VRFS watermark behind content */
-    body::after {
-      content: "VRFS";
-      position: fixed;
-      top: 30%;
-      left: 20%;
-      font-size: 200px;
-      color: rgba(255,255,255,0.05);
-      transform: rotate(-30deg);
-      z-index: 0;
-      pointer-events: none;
-    }
+  @keyframes float {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); }
+    50% { transform: translateY(100vh) translateX(50px) rotate(180deg); }
+    100% { transform: translateY(0) translateX(-50px) rotate(360deg); }
+  }
 
-    h1 {
-      font-size: 80px;
-      margin-top: 80px;
-      text-shadow: 3px 3px 10px black;
-      z-index: 1;
-      position: relative;
-    }
+  /* VRFS watermark */
+  body::after {
+    content: "VRFS";
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    font-size: 200px;
+    color: rgba(255,255,255,0.05);
+    transform: rotate(-30deg);
+    z-index: 0;
+    pointer-events: none;
+  }
 
-    h2 {
-      font-size: 60px;
-      margin-top: 120px;
-      text-shadow: 2px 2px 10px black;
-      z-index: 1;
-      position: relative;
-    }
+  /* Headings */
+  h1 {
+    font-size: 8vw;
+    margin-top: 60px;
+    text-shadow: 3px 3px 10px black;
+    z-index: 1;
+    position: relative;
+  }
 
-    .section {
-      margin-top: 80px;
-      z-index: 1;
-      position: relative;
-    }
+  h2 {
+    font-size: 5vw;
+    margin-top: 80px;
+    text-shadow: 2px 2px 10px black;
+    z-index: 1;
+    position: relative;
+  }
 
-    a.social-link {
-      color: white;
-      font-size: 32px;
-      display: inline-block;
-      margin: 15px;
-      text-decoration: none;
-      text-shadow: 2px 2px 8px black;
-      transition: transform 0.2s;
-    }
+  .section {
+    margin-top: 60px;
+    z-index: 1;
+    position: relative;
+  }
 
-    a.social-link:hover {
-      transform: scale(1.2);
-    }
+  /* Social icons */
+  a.social-link {
+    color: white;
+    font-size: 32px;
+    display: inline-block;
+    margin: 15px;
+    text-decoration: none;
+    text-shadow: 2px 2px 8px black;
+    transition: transform 0.3s, color 0.3s;
+  }
 
-    .arrow {
-      font-size: 40px;
-      margin: 10px;
-    }
+  a.social-link:hover {
+    transform: scale(1.3);
+    color: #ffdd00;
+  }
 
-    .form-container {
-      margin-top: 80px;
-      padding: 30px;
-      background: rgba(0,0,0,0.3);
-      border-radius: 20px;
-      display: inline-block;
-      z-index: 1;
-      position: relative;
-    }
+  .arrow {
+    font-size: 40px;
+    margin: 10px;
+  }
 
-    iframe {
-      border: none;
-      border-radius: 15px;
-      width: 100%;
-      max-width: 600px;
-      height: 800px;
-    }
+  /* Form container */
+  .form-container {
+    margin-top: 80px;
+    padding: 30px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 20px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+  }
 
-    .footer {
-      margin-top: 100px;
-      padding: 40px;
-      font-size: 20px;
-      background: rgba(0,0,0,0.3);
-      text-shadow: 2px 2px 8px black;
-      z-index: 1;
-      position: relative;
-    }
+  iframe {
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 800px;
+  }
 
-  </style>
+  /* Footer */
+  .footer {
+    margin-top: 100px;
+    padding: 40px 20px;
+    font-size: 18px;
+    background: rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 8px black;
+    z-index: 1;
+    position: relative;
+  }
+
+  /* Responsive text */
+  @media(max-width: 768px){
+    h1 { font-size: 12vw; margin-top: 40px; }
+    h2 { font-size: 8vw; margin-top: 60px; }
+    .arrow { font-size: 30px; }
+    a.social-link { font-size: 28px; }
+  }
+
+</style>
 </head>
+
 <body>
 
-  <h1>Welcome to JT.vrfs Web!</h1>
+<h1>Welcome to JT.vrfs Web!</h1>
 
-  <!-- DMA Tryout Server -->
-  <div class="section">
-    <h2>DMA Tryout Server</h2>
-    <a href="https://discord.gg/PGNkHFcHBq" class="social-link"><i class="fab fa-discord"></i> Join the Server</a>
-  </div>
+<!-- DMA Tryout Server -->
+<div class="section">
+  <h2>DMA Tryout Server</h2>
+  <a href="https://discord.gg/PGNkHFcHBq" class="social-link"><i class="fab fa-discord"></i> Join the Server</a>
+</div>
 
-  <!-- SOCIALS -->
-  <div class="section">
-    <h2>SOCIALS</h2>
-    <div class="arrow">⬇️</div>
-    <a href="https://www.tiktok.com/@jt.vrfs0?is_from_webapp=1&sender_device=pc" class="social-link">
-      <i class="fab fa-tiktok"></i> TikTok
-    </a>
-    <a href="https://youtube.com/@jt.vrfs1303?si=ImQGpnoCxI4zmkGp" class="social-link">
-      <i class="fab fa-youtube"></i> YouTube
-    </a>
-  </div>
+<!-- SOCIALS -->
+<div class="section">
+  <h2>SOCIALS</h2>
+  <div class="arrow">⬇️</div>
+  <a href="https://www.tiktok.com/@jt.vrfs0?is_from_webapp=1&sender_device=pc" class="social-link">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+  <a href="https://youtube.com/@jt.vrfs1303?si=ImQGpnoCxI4zmkGp" class="social-link">
+    <i class="fab fa-youtube"></i> YouTube
+  </a>
+</div>
 
-  <!-- Google Form -->
-  <div class="form-container">
-    <h2 style="font-size:40px;">Tryout / Giveaway Form</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGIYmwx65hUDtC9sX-U4U999itGTH53fS2u-sLhMGei8-SeA/viewform?usp=header">
-      Loading…
-    </iframe>
-  </div>
+<!-- Google Form -->
+<div class="form-container">
+  <h2 style="font-size:35px;">Tryout / Giveaway Form</h2>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGIYmwx65hUDtC9sX-U4U999itGTH53fS2u-sLhMGei8-SeA/viewform?usp=header">
+    Loading…
+  </iframe>
+</div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>
-      JT.vrfs — a soon to be Gold CC. This website will show stuff about him.
-      If you want to try out for DMA, join the server and follow me on social media!
-    </p>
-  </div>
+<!-- Footer -->
+<div class="footer">
+  <p>
+    JT.vrfs — a soon to be Gold CC. This website will show stuff about him.
+    If you want to try out for DMA, join the server and follow me on social media!
+  </p>
+</div>
+
+<!-- Animated soccer balls script -->
+<script>
+  const ballsCount = 10; // number of soccer balls
+  for(let i=0; i<ballsCount; i++){
+    let ball = document.createElement('div');
+    ball.className = 'soccer-ball';
+    ball.style.left = Math.random()*100 + 'vw';
+    ball.style.animationDelay = Math.random()*10 + 's';
+    ball.style.width = 30 + Math.random()*50 + 'px';
+    ball.style.height = ball.style.width;
+    document.body.appendChild(ball);
+  }
+</script>
 
 </body>
 </html>
