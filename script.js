@@ -43,3 +43,8 @@ const quotes = [
 
 document.getElementById("quote").innerText =
   quotes[Math.floor(Math.random() * quotes.length)];
+let count = document.querySelectorAll(".player").length;
+let el = document.getElementById("playerCount");
+if(el){
+  el.innerText = "Total Players: " + count;
+}
