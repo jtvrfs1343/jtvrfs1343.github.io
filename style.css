@@ -386,3 +386,25 @@ body {
 body.show {
   opacity: 1;
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
+
+.grid-card {
+  background: rgba(0,0,0,0.5);
+  padding: 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.grid-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px white;
+}
