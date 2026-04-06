@@ -1,3 +1,6 @@
+if(!localStorage.getItem("loggedIn") && !window.location.href.includes("login.html")){
+  window.location = "login.html";
+}
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("show");
 });
