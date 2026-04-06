@@ -135,3 +135,10 @@ h1 {
   margin: 10px;
   font-size: 18px;
 }
+.btn, .player, .position-btn {
+  transition: 0.3s;
+}
+
+.btn:hover, .player:hover, .position-btn:hover {
+  box-shadow: 0 0 15px white;
+}
