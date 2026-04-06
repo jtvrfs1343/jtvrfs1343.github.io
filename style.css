@@ -340,3 +340,12 @@ body {
   }
 
 }
+@media(max-width: 768px){
+
+  .btn {
+    font-size: 20px;
+    padding: 14px 24px;
+    width: 80%;
+  }
+
+}
