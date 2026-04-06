@@ -117,3 +117,21 @@ h1 {
     transform: translateY(0);
   }
 }
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #3a86ff, #0a1f44);
+}
+
+.glow {
+  font-size: 80px;
+  text-shadow: 0 0 20px white, 0 0 40px #3a86ff;
+}
+
+.hero-buttons .btn {
+  margin: 10px;
+  font-size: 18px;
+}
