@@ -118,3 +118,4 @@ function updateClock(){
 
 setInterval(updateClock, 1000);
 updateClock();
+document.getElementById("score").innerText = "DMA 2 - 1 YBA";
