@@ -416,3 +416,8 @@ body.show {
 .card h2 {
   text-shadow: 0 0 10px white;
 }
+.clock {
+  font-size: 22px;
+  margin-top: 15px;
+  text-shadow: 0 0 10px white;
+}
