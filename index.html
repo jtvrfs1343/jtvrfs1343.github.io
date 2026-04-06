@@ -3,31 +3,43 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>JT.vrfs Web</title>
+
 <link rel="stylesheet" href="style.css">
 <script defer src="script.js"></script>
-
-<title>JT.vrfs Web</title>
 </head>
 
 <body>
 
+<!-- STATUS BAR -->
 <div class="status-bar">
   🔴 DMA MATCH NOT ACTIVE
 </div>
+
+<!-- HERO -->
 <div class="hero">
   <h1 class="glow">JT.vrfs</h1>
-  <div class="section">
+  <p>DMA Football Club ⚽</p>
 
+  <button onclick="window.scrollBy(0,600)" class="btn">
+    ⬇ Scroll Down
+  </button>
+</div>
+
+<!-- QUICK ACTIONS -->
+<div class="section">
   <h2>⚡ Quick Actions</h2>
 
   <div class="card">
-    <a href="roster.html" class="btn">⚽ View Roster</a>
-    <a href="schedule.html" class="btn">📅 View Schedule</a>
-    <a href="results.html" class="btn">🏆 Match Results</a>
+    <a href="roster.html" class="btn">⚽ Roster</a>
+    <a href="schedule.html" class="btn">📅 Schedule</a>
+    <a href="results.html" class="btn">🏆 Results</a>
     <a href="stats.html" class="btn">📊 Stats</a>
   </div>
-<div class="section">
+</div>
 
+<!-- TEAM OVERVIEW -->
+<div class="section">
   <h2>📊 Team Overview</h2>
 
   <div class="card">
@@ -36,34 +48,50 @@
     <p>❌ Losses: 2</p>
     <p>🔥 Win Rate: 71%</p>
   </div>
-<div class="section">
+</div>
 
-  <h2>🏆 Recent Matches</h2>
+<!-- NEXT MATCH -->
+<div class="section">
+  <div class="card">
+    <h2>⏳ Next Match</h2>
+    <p id="countdown"></p>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="section">
+  <h2>📅 Schedule</h2>
 
   <div class="card">
-    <p>DMA vs YBA</p>
+    <h3>DMA vs YBA</h3>
+    <p>Wednesday - 7:15 PM EST</p>
+  </div>
+
+  <div class="card">
+    <h3>DMA vs CFC</h3>
+    <p>Friday - 8:00 PM EST</p>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="section">
+  <h2>🏆 Match Results</h2>
+
+  <div class="card">
+    <h3>DMA vs YBA</h3>
+    <p>Score: --</p>
     <p>Status: Upcoming</p>
   </div>
 
   <div class="card">
-    <p>DMA vs CFC</p>
+    <h3>DMA vs CFC</h3>
+    <p>Score: --</p>
     <p>Status: Upcoming</p>
   </div>
+</div>
+
+<!-- JOIN -->
 <div class="section">
-
-  <h2>⭐ Featured Players</h2>
-
-  <div class="card">
-    <p>JT.vrfs (CB)</p>
-    <p>⭐ 732 Rating</p>
-  </div>
-
-  <div class="card">
-    <p>mikey (ST)</p>
-    <p>⭐ 2k Rating</p>
-  </div>
-<div class="section">
-
   <div class="card">
     <h2>🎯 Join DMA</h2>
     <p>Think you’re good enough? Prove it.</p>
@@ -72,65 +100,15 @@
       Join Tryouts
     </a>
   </div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-<button onclick="window.scrollBy(0, 600)" class="btn">
-  ⬇ Scroll Down
-</button>
-  <p>DMA Football Club ⚽</p>
-
-  <div class="hero-buttons">
-    <a href="roster.html" class="btn">View Roster</a>
-    <a href="leaderboard.html" class="btn">Leaderboard</a>
-  </div>
-  
-</div>
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
-</head>
-
-<body class="fade">
-
-<div class="navbar">
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="roster.html">Roster</a>
-    <a href="leaderboard.html">Leaderboard</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="results.html">Results</a>
-    <a href="videos.html">Videos</a>
-    <a href="stats.html">Stats</a>
-  </div>
-</div>
-<h1>JT.vrfs Web</h1>
-
-<div class="card">
-  <h2>DMA Tryout Server</h2>
-  <a href="https://discord.gg/PGNkHFcHBq" class="btn">Join Discord</a>
 </div>
 
-<div class="card">
-  <h2>Enter Giveaway</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGIYmwx65hUDtC9sX-U4U999itGTH53fS2u-sLhMGei8-SeA/viewform?usp=header" width="100%" height="500"></iframe>
-</div>
-
-</body>
-</html>
-<div id="clock" style="margin-top:20px;font-size:20px;"></div>
-<div id="quote"></div>
-<div class="card">
-  <h2>⏳ Next Match</h2>
-  <p id="countdown"></p>
+<!-- BOTTOM NAV (MOBILE) -->
+<div class="bottom-nav">
+  <a href="index.html">🏠</a>
+  <a href="roster.html">⚽</a>
+  <a href="leaderboard.html">🏆</a>
+  <a href="schedule.html">📅</a>
+  <a href="stats.html">📊</a>
 </div>
 
 </body>
