@@ -34,3 +34,12 @@ setInterval(() => {
   document.getElementById("clock").innerText =
     now.toLocaleTimeString();
 }, 1000);
+const quotes = [
+  "Play fast. Think faster.",
+  "DMA never loses ⚽",
+  "Train hard. Win easy.",
+  "Legends are built here."
+];
+
+document.getElementById("quote").innerText =
+  quotes[Math.floor(Math.random() * quotes.length)];
