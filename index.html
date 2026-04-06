@@ -1,52 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>JT.vrfs Web</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       text-align: center;
       color: white;
       scroll-behavior: smooth;
 
-      /* blue gradient */
+      /* Background gradient */
       background: linear-gradient(to bottom, #0a1f44, #3a86ff);
 
-      /* soccer pattern */
-      background-image: radial-gradient(circle at 30px 30px, rgba(255,255,255,0.08) 3px, transparent 3px);
+      /* Soccer ball pattern overlay */
+      background-image: radial-gradient(circle at 30px 30px, rgba(255,255,255,0.06) 3px, transparent 3px);
       background-size: 70px 70px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* VRFS watermark behind content */
+    body::after {
+      content: "VRFS";
+      position: fixed;
+      top: 30%;
+      left: 20%;
+      font-size: 200px;
+      color: rgba(255,255,255,0.05);
+      transform: rotate(-30deg);
+      z-index: 0;
+      pointer-events: none;
     }
 
     h1 {
       font-size: 80px;
-      margin-top: 120px;
-      text-shadow: 2px 2px 10px black;
+      margin-top: 80px;
+      text-shadow: 3px 3px 10px black;
+      z-index: 1;
+      position: relative;
     }
 
     h2 {
       font-size: 60px;
-      margin-top: 200px;
+      margin-top: 120px;
       text-shadow: 2px 2px 10px black;
+      z-index: 1;
+      position: relative;
     }
 
     .section {
-      margin-top: 150px;
+      margin-top: 80px;
+      z-index: 1;
+      position: relative;
     }
 
-    a {
+    a.social-link {
       color: white;
-      text-decoration: none;
-      display: block;
+      font-size: 32px;
+      display: inline-block;
       margin: 15px;
-      font-size: 28px;
-      font-weight: bold;
+      text-decoration: none;
       text-shadow: 2px 2px 8px black;
+      transition: transform 0.2s;
     }
 
-    a:hover {
-      text-decoration: underline;
+    a.social-link:hover {
+      transform: scale(1.2);
     }
 
     .arrow {
@@ -54,101 +76,73 @@
       margin: 10px;
     }
 
-    .form-box {
-      margin-top: 120px;
-      padding: 40px;
-      background: rgba(0,0,0,0.4);
+    .form-container {
+      margin-top: 80px;
+      padding: 30px;
+      background: rgba(0,0,0,0.3);
       border-radius: 20px;
       display: inline-block;
+      z-index: 1;
+      position: relative;
     }
 
-    input {
-      display: block;
-      margin: 20px auto;
-      padding: 15px;
-      width: 300px;
-      border-radius: 10px;
+    iframe {
       border: none;
-      font-size: 18px;
-    }
-
-    .submit-btn {
-      padding: 15px 30px;
-      border: none;
-      background: white;
-      color: #0a1f44;
-      font-size: 20px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 600px;
+      height: 800px;
     }
 
     .footer {
-      margin-top: 150px;
+      margin-top: 100px;
       padding: 40px;
       font-size: 20px;
       background: rgba(0,0,0,0.3);
       text-shadow: 2px 2px 8px black;
+      z-index: 1;
+      position: relative;
     }
+
   </style>
 </head>
-
 <body>
 
   <h1>Welcome to JT.vrfs Web!</h1>
 
-  <!-- DMA -->
+  <!-- DMA Tryout Server -->
   <div class="section">
     <h2>DMA Tryout Server</h2>
-    <a href="https://discord.gg/PGNkHFcHBq">Join the Server</a>
+    <a href="https://discord.gg/PGNkHFcHBq" class="social-link"><i class="fab fa-discord"></i> Join the Server</a>
   </div>
 
   <!-- SOCIALS -->
   <div class="section">
     <h2>SOCIALS</h2>
     <div class="arrow">⬇️</div>
-
-    <a href="https://www.tiktok.com/@jt.vrfs0?is_from_webapp=1&sender_device=pc">
-      Follow my TikTok
+    <a href="https://www.tiktok.com/@jt.vrfs0?is_from_webapp=1&sender_device=pc" class="social-link">
+      <i class="fab fa-tiktok"></i> TikTok
     </a>
-
-    <a href="https://youtube.com/@jt.vrfs1303?si=ImQGpnoCxI4zmkGp">
-      Subscribe to my YouTube
+    <a href="https://youtube.com/@jt.vrfs1303?si=ImQGpnoCxI4zmkGp" class="social-link">
+      <i class="fab fa-youtube"></i> YouTube
     </a>
   </div>
 
-  <!-- FORM -->
-  <div class="form-box">
-    <h2 style="font-size:40px;">Enter Giveaway / Video</h2>
-
-    <input id="playerId" type="text" placeholder="Player ID">
-    <input id="username" type="text" placeholder="Username">
-    <input id="email" type="email" placeholder="Email">
-
-    <button class="submit-btn" onclick="submitForm()">Submit</button>
+  <!-- Google Form -->
+  <div class="form-container">
+    <h2 style="font-size:40px;">Tryout / Giveaway Form</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGIYmwx65hUDtC9sX-U4U999itGTH53fS2u-sLhMGei8-SeA/viewform?usp=header">
+      Loading…
+    </iframe>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <div class="footer">
     <p>
       JT.vrfs — a soon to be Gold CC. This website will show stuff about him.
       If you want to try out for DMA, join the server and follow me on social media!
     </p>
   </div>
-
-  <script>
-    function submitForm() {
-      let id = document.getElementById("playerId").value;
-      let user = document.getElementById("username").value;
-      let email = document.getElementById("email").value;
-
-      console.log("Player ID:", id);
-      console.log("Username:", user);
-      console.log("Email:", email);
-
-      alert("Submitted! (Check console)");
-    }
-  </script>
 
 </body>
 </html>
