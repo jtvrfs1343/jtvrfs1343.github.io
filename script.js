@@ -48,3 +48,21 @@ let el = document.getElementById("playerCount");
 if(el){
   el.innerText = "Total Players: " + count;
 }
+const matchDate = new Date("2026-04-09T19:15:00"); // adjust if needed
+
+setInterval(() => {
+  let now = new Date();
+  let diff = matchDate - now;
+
+  if(diff <= 0){
+    document.getElementById("countdown").innerText = "LIVE 🔴";
+    return;
+  }
+
+  let h = Math.floor(diff / (1000*60*60));
+  let m = Math.floor((diff % (1000*60*60)) / (1000*60));
+  let s = Math.floor((diff % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerText =
+    `${h}h ${m}m ${s}s`;
+}, 1000);
