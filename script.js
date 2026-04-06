@@ -29,3 +29,8 @@ document.querySelectorAll("a, .btn, .player").forEach(el => {
     audio.play();
   });
 });
+setInterval(() => {
+  let now = new Date();
+  document.getElementById("clock").innerText =
+    now.toLocaleTimeString();
+}, 1000);
