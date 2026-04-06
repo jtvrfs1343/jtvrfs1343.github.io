@@ -142,3 +142,15 @@ h1 {
 .btn:hover, .player:hover, .position-btn:hover {
   box-shadow: 0 0 15px white;
 }
+body {
+  animation: bgPulse 10s infinite alternate;
+}
+
+@keyframes bgPulse {
+  from {
+    background: linear-gradient(to bottom, #0a1f44, #3a86ff);
+  }
+  to {
+    background: linear-gradient(to bottom, #071633, #5aa0ff);
+  }
+}
