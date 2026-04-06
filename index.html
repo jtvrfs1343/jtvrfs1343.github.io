@@ -27,7 +27,7 @@
 
     h2 {
       font-size: 60px;
-      margin-top: 100px;
+      margin-top: 200px;
       text-shadow: 2px 2px 10px black;
     }
 
@@ -54,19 +54,33 @@
       margin: 10px;
     }
 
-    .form-container {
-      margin-top: 100px;
+    .form-box {
+      margin-top: 120px;
       padding: 40px;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.4);
       border-radius: 20px;
       display: inline-block;
     }
 
-    iframe {
+    input {
+      display: block;
+      margin: 20px auto;
+      padding: 15px;
+      width: 300px;
+      border-radius: 10px;
       border: none;
-      border-radius: 15px;
-      width: 400px;
-      height: 700px;
+      font-size: 18px;
+    }
+
+    .submit-btn {
+      padding: 15px 30px;
+      border: none;
+      background: white;
+      color: #0a1f44;
+      font-size: 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     .footer {
@@ -83,35 +97,58 @@
 
   <h1>Welcome to JT.vrfs Web!</h1>
 
-  <!-- DMA Tryout Server -->
+  <!-- DMA -->
   <div class="section">
     <h2>DMA Tryout Server</h2>
     <a href="https://discord.gg/PGNkHFcHBq">Join the Server</a>
   </div>
 
-  <!-- Socials -->
+  <!-- SOCIALS -->
   <div class="section">
     <h2>SOCIALS</h2>
     <div class="arrow">⬇️</div>
-    <a href="https://www.tiktok.com/@jt.vrfs0?is_from_webapp=1&sender_device=pc">Follow my TikTok</a>
-    <a href="https://youtube.com/@jt.vrfs1303?si=ImQGpnoCxI4zmkGp">Subscribe to my YouTube</a>
+
+    <a href="https://www.tiktok.com/@jt.vrfs0?is_from_webapp=1&sender_device=pc">
+      Follow my TikTok
+    </a>
+
+    <a href="https://youtube.com/@jt.vrfs1303?si=ImQGpnoCxI4zmkGp">
+      Subscribe to my YouTube
+    </a>
   </div>
 
-  <!-- Giveaway / Video Form -->
-  <div class="form-container">
+  <!-- FORM -->
+  <div class="form-box">
     <h2 style="font-size:40px;">Enter Giveaway / Video</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGIYmwx65hUDtC9sX-U4U999itGTH53fS2u-sLhMGei8-SeA/viewform?embedded=true">
-      Loading…
-    </iframe>
+
+    <input id="playerId" type="text" placeholder="Player ID">
+    <input id="username" type="text" placeholder="Username">
+    <input id="email" type="email" placeholder="Email">
+
+    <button class="submit-btn" onclick="submitForm()">Submit</button>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <div class="footer">
     <p>
       JT.vrfs — a soon to be Gold CC. This website will show stuff about him.
       If you want to try out for DMA, join the server and follow me on social media!
     </p>
   </div>
+
+  <script>
+    function submitForm() {
+      let id = document.getElementById("playerId").value;
+      let user = document.getElementById("username").value;
+      let email = document.getElementById("email").value;
+
+      console.log("Player ID:", id);
+      console.log("Username:", user);
+      console.log("Email:", email);
+
+      alert("Submitted! (Check console)");
+    }
+  </script>
 
 </body>
 </html>
