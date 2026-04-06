@@ -202,3 +202,13 @@ body {
 .card h3 {
   text-shadow: 0 0 10px white;
 }
+.status-bar {
+  background: red;
+  padding: 10px;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.5; }
+}
