@@ -92,11 +92,27 @@ document.querySelectorAll("a").forEach(link => {
 });
 function updateClock(){
   let now = new Date();
-  let time = now.toLocaleTimeString();
-  
-  let clockEl = document.getElementById("clock");
-  if(clockEl){
-    clockEl.innerText = time;
+
+  // Time (EST)
+  let time = now.toLocaleTimeString("en-US", {
+    timeZone: "America/New_York",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  // Date
+  let date = now.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric"
+  });
+
+  let timeEl = document.getElementById("clock-time");
+  let dateEl = document.getElementById("clock-date");
+
+  if(timeEl && dateEl){
+    timeEl.innerText = time + " EST";
+    dateEl.innerText = date;
   }
 }
 
