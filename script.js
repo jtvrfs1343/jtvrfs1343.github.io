@@ -90,3 +90,15 @@ document.querySelectorAll("a").forEach(link => {
     }
   });
 });
+function updateClock(){
+  let now = new Date();
+  let time = now.toLocaleTimeString();
+  
+  let clockEl = document.getElementById("clock");
+  if(clockEl){
+    clockEl.innerText = time;
+  }
+}
+
+setInterval(updateClock, 1000);
+updateClock();
