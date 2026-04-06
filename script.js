@@ -17,3 +17,7 @@ document.querySelectorAll("a").forEach(link => {
     }
   });
 });
+function logout(){
+  localStorage.removeItem("loggedIn");
+  window.location = "login.html";
+}
