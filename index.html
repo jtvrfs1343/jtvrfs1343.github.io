@@ -50,10 +50,22 @@
     pointer-events: none;
   }
 
+  /* Header section with logo */
+  .header-section {
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-section .logo {
+    width: 150px; /* adjust size as needed */
+    margin-bottom: 20px;
+    filter: drop-shadow(2px 2px 8px black);
+  }
+
   /* Headings */
   h1 {
     font-size: 8vw;
-    margin-top: 60px;
     text-shadow: 3px 3px 10px black;
     z-index: 1;
     position: relative;
@@ -61,7 +73,7 @@
 
   h2 {
     font-size: 5vw;
-    margin-top: 80px;
+    margin-top: 60px;
     text-shadow: 2px 2px 10px black;
     z-index: 1;
     position: relative;
@@ -131,6 +143,7 @@
     h2 { font-size: 8vw; margin-top: 60px; }
     .arrow { font-size: 30px; }
     a.social-link { font-size: 28px; }
+    .header-section .logo { width: 100px; }
   }
 
 </style>
@@ -138,7 +151,11 @@
 
 <body>
 
-<h1>Welcome to JT.vrfs Web!</h1>
+<!-- Header with Logo -->
+<div class="header-section">
+  <img src="ce7f43f7-ebb9-4d60-9417-b09de9c5a387.png" alt="Dark Madrid Logo" class="logo">
+  <h1>Welcome to JT.vrfs Web!</h1>
+</div>
 
 <!-- DMA Tryout Server -->
 <div class="section">
@@ -190,4 +207,3 @@
 
 </body>
 </html>
-
