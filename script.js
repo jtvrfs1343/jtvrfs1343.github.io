@@ -119,3 +119,6 @@ function updateClock(){
 setInterval(updateClock, 1000);
 updateClock();
 document.getElementById("score").innerText = "DMA 0 - 0 YBA";
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("show");
+});
