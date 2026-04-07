@@ -225,3 +225,35 @@ a:hover, .btn:hover, .grid-card:hover {
   transform: scale(1.03);
   box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
+.btn:hover, .grid-card:hover {
+  box-shadow: 0 0 20px #3a86ff;
+}
+.navbar a {
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #3a86ff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.show {
+  opacity: 1;
+}
