@@ -211,3 +211,17 @@ body {
   }
 
 }
+/* GLOBAL HOVER EFFECT */
+a, .btn, .card, .grid-card, .player, .social-btn {
+  transition: all 0.3s ease;
+}
+
+a:hover, .btn:hover, .grid-card:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
