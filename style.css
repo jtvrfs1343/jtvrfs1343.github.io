@@ -460,3 +460,39 @@ body.show {
     width: 35px;
   }
 }
+.socials-pro {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.follow-text {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.social-btn img {
+  width: 24px;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
