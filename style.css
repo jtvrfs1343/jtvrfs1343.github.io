@@ -267,3 +267,13 @@ body.show {
   opacity: 1;
   transform: translateY(0);
 }
+.live-match {
+  border: 2px solid red;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 25px red;
+  }
+}
